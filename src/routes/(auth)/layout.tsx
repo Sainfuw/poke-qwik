@@ -9,7 +9,7 @@ export default component$(() => {
         <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
           <div class="max-w-md mx-auto">
             <div>
-              <h1 class="text-gray-600 text-4xl font-semibold">Login Form</h1>
+              <h1 class="text-gray-800 text-4xl font-semibold">Login Form</h1>
             </div>
             <div class="divide-y divide-gray-200">
               <Slot />

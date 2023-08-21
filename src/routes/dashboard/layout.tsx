@@ -1,5 +1,13 @@
-import { Slot, component$ } from '@builder.io/qwik';
-import NavCounterDash from '~/components/shared/nav-counter-dash/nav-counter-dash';
+import { Slot, component$ } from '@builder.io/qwik'
+import { routeLoader$ } from '@builder.io/qwik-city'
+import NavCounterDash from '~/components/shared/nav-counter-dash/nav-counter-dash'
+
+export const useCheckAuthCookie = routeLoader$(({ cookie, redirect }) => {
+  const jwtCookie = cookie.get('jwt')
+  if (jwtCookie) return
+
+  redirect(302, '/login')
+})
 
 export default component$(() => {
   return (
@@ -10,4 +18,4 @@ export default component$(() => {
       </div>
     </div>
   )
-});
+})
